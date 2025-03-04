@@ -1,3 +1,5 @@
+import os
+
 from bson import ObjectId
 from flask import Flask, render_template, request, jsonify
 import json
@@ -28,6 +30,9 @@ app.config.from_object(Config)
 
 # Inicializar JWT
 jwt = JWTManager(app)
+
+app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
+app.config["SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")  # Para compatibilidad con Flask
 
 # Diccionario de usuarios para pruebas (esto luego se puede migrar a MongoDB)
 USERS = {
