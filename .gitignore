@@ -1,6 +1,5 @@
 # Ignorar entornos virtuales
 venv/
-.env
 
 # Ignorar archivos de configuración de IDEs
 .idea/

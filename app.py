@@ -22,6 +22,8 @@ from dotenv import load_dotenv
 
 # Cargar variables del archivo .env
 load_dotenv()
+# Depuración para ver si la variable está disponible
+print("DEBUG: JWT_SECRET_KEY cargado:", os.getenv("JWT_SECRET_KEY"))
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})  # Permite CORS solo en /api/*
