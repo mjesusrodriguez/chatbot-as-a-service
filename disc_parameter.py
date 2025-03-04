@@ -1,3 +1,5 @@
+import os
+
 import spacy
 from pymongo import MongoClient
 from itertools import chain
@@ -6,7 +8,8 @@ from itertools import chain
 nlp = spacy.load("en_core_web_md")
 
 # Conexión a MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
 
 # Función para obtener los dos parámetros con la mayor combinación de frecuencias
 def get_top_parameters_combined(domain):

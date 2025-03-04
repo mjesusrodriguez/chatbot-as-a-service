@@ -1,7 +1,11 @@
+import os
+
 from pymongo import MongoClient
 
 # Conexión a MongoDB con las tres bases de datos
-client = MongoClient("mongodb://localhost:27017/")
+
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
 dbs = {
     "hotels": client["hotels"],
     "restaurants": client["restaurants"],
