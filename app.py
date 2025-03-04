@@ -16,6 +16,10 @@ from tagfilter import tagFilter, getAditionalQuestions
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from config import Config
+from dotenv import load_dotenv
+
+# Cargar variables del archivo .env
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})  # Permite CORS solo en /api/*
