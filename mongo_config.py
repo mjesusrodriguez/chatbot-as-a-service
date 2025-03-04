@@ -18,7 +18,7 @@ def get_database(db_name="services"):
 from pymongo import MongoClient
 
 class MongoDB:
-    def __init__(self, uri="mongodb+srv://mjesusrodriguez:Maya2012@chatppt.rzmzy.mongodb.net/"):
+    def __init__(self, uri="mongodb+srv://doadmin:VBj19g2YyE5i0678@db-mongodb-lon1-56586-3969746e.mongo.ondigitalocean.com/admin?tls=true&authSource=admin"):
         # Inicializa la conexión a MongoDB con la URI proporcionada
         self.client = MongoClient(uri)
 
